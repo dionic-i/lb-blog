@@ -1,0 +1,33 @@
+{
+  "name": "Article",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "New article"
+    },
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "blog_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "blog": {
+      "type": "belongsTo",
+      "model": "Blog",
+      "foreignKey": "blog_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
