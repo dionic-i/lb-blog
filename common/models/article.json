@@ -18,6 +18,11 @@
     "blog_id": {
       "type": "number",
       "required": true
+    },
+    "votes": {
+      "type": "number",
+      "required": true,
+      "default": 0
     }
   },
   "validations": [],
@@ -28,6 +33,53 @@
       "foreignKey": "blog_id"
     }
   },
-  "acls": [],
-  "methods": {}
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "vote"
+    }
+  ],
+  "methods": {
+    "prototype.vote": {
+      "accepts": [
+        {
+          "arg": "up",
+          "type": "boolean",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/vote",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }
