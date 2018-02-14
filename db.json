@@ -5,8 +5,8 @@
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
-    "Blog": 4,
-    "Article": 6
+    "Blog": 16,
+    "Article": 8
   },
   "models": {
     "User": {},
@@ -15,15 +15,10 @@
     "RoleMapping": {},
     "Role": {},
     "Blog": {
-      "2": "{\"title\":\"django\",\"description\":\"amaizing django\",\"id\":2}",
-      "3": "{\"title\":\"javascript\",\"description\":\"excelent js\",\"id\":3}"
+      "15": "{\"title\":\"New empty blog\",\"id\":15}"
     },
     "Article": {
-      "1": "{\"title\":\"New article\",\"body\":\"string\",\"blog_id\":2,\"id\":2,\"votes\":0}",
-      "2": "{\"id\":2,\"title\":\"Base article\",\"body\":\"string\",\"blog_id\":2,\"votes\":5}",
-      "3": "{\"title\":\"Python first article\",\"body\":\"111\",\"blog_id\":2,\"id\":3}",
-      "4": "{\"title\":\"Python second article\",\"body\":\"111\",\"blog_id\":3,\"id\":4,\"votes\":1}",
-      "5": "{\"title\":\"My new article1\",\"body\":\"Super\",\"blog_id\":2,\"votes\":0,\"id\":5}"
+      "7": "{\"title\":\"New empty article\",\"body\":\"Empty\",\"blog_id\":15,\"votes\":1,\"id\":7}"
     }
   }
 }
