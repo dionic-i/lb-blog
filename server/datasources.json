@@ -3,5 +3,14 @@
     "name": "db",
     "connector": "memory",
     "file": "db.json"
+  },
+  "mysqlDs": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "database": "dva-blog",
+    "username": "root",
+    "password": "301283",
+    "name": "mysqlDs",
+    "connector": "mysql"
   }
 }

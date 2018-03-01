@@ -1,38 +1,36 @@
 {
-  "name": "Article",
+  "name": "Menu",
   "base": "PersistedModel",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "key": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string"
+    },
     "title": {
       "type": "string",
-      "required": true,
-      "default": "New article"
+      "required": true
     },
-    "body": {
+    "route": {
       "type": "string",
       "required": true
     },
-    "blog_id": {
-      "type": "number",
+    "right": {
+      "type": "boolean",
       "required": true
     },
-    "votes": {
-      "type": "number",
-      "required": true,
-      "default": 0
+    "permissions": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {
-    "blog": {
-      "type": "belongsTo",
-      "model": "Blog",
-      "foreignKey": "blog_id"
-    }
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "*",
@@ -45,24 +43,16 @@
       "principalType": "ROLE",
       "principalId": "$unauthenticated",
       "permission": "ALLOW",
-      "property": "find"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "ALLOW",
-      "property": "vote"
+      "property": "getMenu"
     }
   ],
   "methods": {
-    "prototype.vote": {
+    "getMenu": {
       "accepts": [
         {
-          "arg": "up",
-          "type": "boolean",
-          "required": true,
-          "description": ""
+          "arg": "options",
+          "type": "object",
+          "http": "optionsFromRequest"
         }
       ],
       "returns": [
@@ -76,8 +66,8 @@
       "description": "",
       "http": [
         {
-          "path": "/vote",
-          "verb": "put"
+          "path": "/menu",
+          "verb": "get"
         }
       ]
     }

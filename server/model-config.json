@@ -14,33 +14,41 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "mysqlDs"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mysqlDs",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mysqlDs",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "mysqlDs",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mysqlDs",
     "public": false
   },
   "Blog": {
-    "dataSource": "db",
+    "dataSource": "mysqlDs",
     "public": true
   },
   "Article": {
-    "dataSource": "db",
+    "dataSource": "mysqlDs",
     "public": true
+  },
+  "Menu": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "App": {
+    "public": true,
+    "dataSource": false
   }
 }

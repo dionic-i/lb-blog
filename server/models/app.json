@@ -1,0 +1,39 @@
+{
+  "name": "App",
+  "base": "Model",
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "checkStatus"
+    }
+  ],
+  "methods": {
+    "checkStatus": {
+      "accepts": [
+        {
+          "arg": "options",
+          "type": "object",
+          "http": "optionsFromRequest"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/status",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}
